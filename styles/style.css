@@ -6,6 +6,7 @@
  * Class: Scotland 2017
  */
 
+
 html,
 body {
 	font-family: "Source Sans Pro","Helvetica Neue",Arial,sans-serif;
@@ -17,7 +18,7 @@ button {
 
 /*  Navigation */
 .navbar-brand > img {
-	max-height: 40px;
+	max-height: 80px;
 	width: auto;
 }
 
@@ -26,17 +27,38 @@ button {
 	right:  0;
 }
 
+.navbar-nav {
+	margin-left:1.5rem;
+}
+
 .navbar-light .navbar-nav .nav-link {
 	color: #292b2c;
 	font-weight: 600;
 	text-transform: uppercase;
+	margin-right:1rem;
+	border: 1px solid transparent; /* per a evitar que al :hover salti quan afegim el border-bottom */
+}
 
-	/*  Challenge: can you make the navigation links orange on hover? */
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus
+{
+	color:#ce5f31;
+	border-bottom:1px dotted #ce5f31;
 }
 
 /* Buttons */
 /* INSERT BUTTON STYLES HERE */
-
+.donate {
+	background:#ce5f31;
+}
+.donate:hover,
+.donate:focus{
+	background:#f39066;
+}
+.volunteer:hover,
+.volunteer:focus {
+	color:#ee7845;
+}
 
 /* Alert */
 .alert {
@@ -59,13 +81,19 @@ button {
 	left: -1px;
 	top: 0;
 	height: 100%;
-	width: 1px;
+	width: 3px;
 	background: #ce5f31;
 }
 
 /* Jumbotron */
 .jumbotron {
 	border-radius: 0;
+	background:rgb(204, 201, 201);
+	background-image: url('../images/header-bike.jpg');
+}
+
+.jumbotron h1, .jumbotron p {
+	color: white;
 }
 
 /* Headings */
@@ -120,6 +148,52 @@ button {
 	margin-bottom: 0;
 }
 
+/* afegits */
+section article{
+	padding:1rem;
+	border:1px solid rgb(231, 230, 230);
+}
+
+section .article:nth-child(1){
+	background: rgb(243, 239, 239);
+	margin-right:1rem;
+}
+
+/* sidebar */
+.sidebar__img{
+	padding:1rem;
+	max-width:150px;
+}
+
+@media (max-width: 992px) { 
+	.article{
+		/* background: rgb(219, 10, 97); */
+	}
+	.sidebar__img{
+		max-width:300px;
+	}
+ }
+
+
+@media (max-width: 768px) { 
+	.article{
+		/* background: lightcoral; */
+	}
+	.sidebar__img{
+		max-width:200px;
+	}
+ }
+
+ @media (min-width: 576px) {
+	.article{
+		/* background: rgb(5, 206, 129); */
+	}
+
+	.sidebar__img img{
+		width:100%;
+	}
+ }
+
 /* Footer */
 .footer {
 	margin-top: 4em;
@@ -136,6 +210,6 @@ button {
 @media screen and (min-width: 992px) {
 
 	.navbar-brand > img {
-	   max-height: 80px;
+	   max-height: 100px;
 	}
 }
